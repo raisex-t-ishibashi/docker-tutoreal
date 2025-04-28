@@ -13,7 +13,7 @@ export default function PageUi({ data }: { data: Data }) {
     const fetchHelloData = async () => {
       console.log("this is client side process. fetch /api/hello")
       // frontendのコンテナへリクエスト
-      const res = await fetch('http://localhost:3000/api/hello');
+      const res = await fetch('/api/hello');
       const data = await res.json();
       setHelloData(data);
     };

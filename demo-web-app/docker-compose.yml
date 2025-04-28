@@ -6,13 +6,22 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "8000:8000"
+      - "18000:18000"
     environment:
       - PYTHONUNBUFFERED=1
+    # network_mode: host
 
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "13000:13000"
+    depends_on:
+      - backend
+    environment:
+      - AWS_REGION=${AWS_REGION}
+      - SNS_TOPIC_ARN=${SNS_TOPIC_ARN}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+    # network_mode: host

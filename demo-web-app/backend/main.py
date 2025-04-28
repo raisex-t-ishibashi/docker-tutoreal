@@ -6,7 +6,7 @@ app = FastAPI()
 
 # フロントエンドのオリジンを指定
 origins = [
-    "http://localhost:3000",
+    "http://localhost:13000",
 ]
 
 app.add_middleware(

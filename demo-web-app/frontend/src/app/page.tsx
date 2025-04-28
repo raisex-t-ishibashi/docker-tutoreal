@@ -6,7 +6,7 @@ export const fetchCache = 'default-no-store';
 async function getHello2Data() {
   console.log("this is server side process. fetch /api/hello2")
   // frontendのコンテナへリクエスト
-  const res = await fetch('http://localhost:3000/api/hello2');
+  const res = await fetch('http://localhost:13000/api/hello2');
   if (!res.ok) {
     throw new Error('Failed to fetch hello2 data');
   }
